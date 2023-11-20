@@ -1,6 +1,6 @@
 name: calculadora_dart_dio
 description: Uma calculadora usando o aprendizado da Formação Flutter da DIO.
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/GustavoCruz13/Calculadora-DIO
 
 environment:
