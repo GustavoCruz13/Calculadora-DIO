@@ -3,15 +3,23 @@ import 'dart:io';
 
 void main(List<String> args) {
   print("Calculadora em Dart Iniciando...");
-  print("Informe o primeiro número:");
+  double number1 = double.parse(lerConsole("Informe o primeiro número:"));
+  double number2 = double.parse(lerConsole("Informe o segundo número:"));
+  String operador = lerConsole("Informe o operador: (+, -, * e /)");
+  calcularBasico(operador, number1, number2);
+}
+
+double lerConsoleParsed(String texto) {
+  return double.parse(lerConsole(texto));
+}
+
+String lerConsole(String texto) {
+  print(texto);
   var line = stdin.readLineSync(encoding: utf8);
-  double number1 = double.parse(line ?? "0");
-  print("Informe o segundo número:");
-  line = stdin.readLineSync(encoding: utf8);
-  double number2 = double.parse(line ?? "0");
-  print("Informe o operador: (+, -, * e /)");
-  line = stdin.readLineSync(encoding: utf8);
-  String operador = line ?? " ";
+  return line ?? " ";
+}
+
+void calcularBasico(String operador, double number1, double number2) {
   double resultado = 0;
   switch (operador) {
     case "+":
